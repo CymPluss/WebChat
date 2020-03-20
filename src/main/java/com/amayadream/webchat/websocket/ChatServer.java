@@ -114,6 +114,8 @@ public class ChatServer {
             session.getBasicRemote().sendText(message);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException e){
+            e.printStackTrace();
         }
     }
 

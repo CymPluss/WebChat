@@ -16,7 +16,7 @@ public class LogUtil {
         log.setTime(time);
         log.setType(type);
         log.setDetail(detail);
-        log.setId(ip);
+        log.setIp(ip);
         return log;
     }
 

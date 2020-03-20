@@ -7,7 +7,7 @@
     <jsp:include page="include/commonfile.jsp"/>
     <script src="${ctx}/plugins/sockjs/sockjs.js"></script>
 </head>
-<body>
+<body background="../../static/source/img/bg2.jpg">
 <jsp:include page="include/header.jsp"/>
 <div class="am-cf admin-main">
     <jsp:include page="include/sidebar.jsp"/>
@@ -26,7 +26,7 @@
             </div>
             <!-- 接收者 -->
             <div class="" style="float: left">
-                <p class="am-kai">发送给 : <span id="sendto">全体成员</span><button class="am-btn am-btn-xs am-btn-danger" onclick="$('#sendto').text('全体成员')">复位</button></p>
+                <p class="am-kai">发送给 : <span contenteditable="true" id="sendto">全体成员</span><button class="am-btn am-btn-xs am-btn-danger" onclick="$('#sendto').text('全体成员')">复位</button></p>
             </div>
             <!-- 按钮区 -->
             <div class="am-btn-group am-btn-group-xs" style="float:right;">
@@ -265,11 +265,11 @@
         var html;
         $.getJSON("http://www.tuling123.com/openapi/api?key=6ad8b4d96861f17d68270216c880d5e3&info=" + message,function(data){
             if(data.code == 100000){
-                html = "<li class=\"am-comment am-comment-primary\"><a href=\"#link-to-user-home\"><img width=\"48\" height=\"48\" class=\"am-comment-avatar\" alt=\"\" src=\"${ctx}/static/img/robot.jpg\"></a><div class=\"am-comment-main\">\n" +
+                html = "<li class=\"am-comment am-comment-primary\"><a href=\"#link-to-user-home\"><img width=\"48\" height=\"48\" class=\"am-comment-avatar\" alt=\"\" src=\"${ctx}/static/source/img/robot.jpg\"></a><div class=\"am-comment-main\">\n" +
                         "<header class=\"am-comment-hd\"><div class=\"am-comment-meta\">   <a class=\"am-comment-author\" href=\"#link-to-user\">Robot</a> 发表于<time> "+getDateFull()+"</time> 发送给: ${userid}</div></header><div class=\"am-comment-bd\"> <p>"+data.text+"</p></div></div></li>";
             }
             if(data.code == 200000){
-                html = "<li class=\"am-comment am-comment-primary\"><a href=\"#link-to-user-home\"><img width=\"48\" height=\"48\" class=\"am-comment-avatar\" alt=\"\" src=\"${ctx}/static/img/robot.jpg\"></a><div class=\"am-comment-main\">\n" +
+                html = "<li class=\"am-comment am-comment-primary\"><a href=\"#link-to-user-home\"><img width=\"48\" height=\"48\" class=\"am-comment-avatar\" alt=\"\" src=\"${ctx}/static/source/img/robot.jpg\"></a><div class=\"am-comment-main\">\n" +
                         "<header class=\"am-comment-hd\"><div class=\"am-comment-meta\">   <a class=\"am-comment-author\" href=\"#link-to-user\">Robot</a> 发表于<time> "+getDateFull()+"</time> 发送给: ${userid}</div></header><div class=\"am-comment-bd\"> <p>"+data.text+"</p><a href=\""+data.url+"\" target=\"_blank\">"+data.url+"</a></div></div></li>";
             }
             $("#chat").append(html);

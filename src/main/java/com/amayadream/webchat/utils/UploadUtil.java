@@ -17,6 +17,7 @@ import java.util.Iterator;
  */
 public class UploadUtil {
 
+    String separator =  File.separator ;
     /**
      * Spring MVC文件上传,返回的是经过处理的path+fileName
      * @param request    request
@@ -48,14 +49,14 @@ public class UploadUtil {
                         //重命名上传后的文件名
                         String fileName =  userid + "." + prefix;
                         //定义上传路径,格式为 upload/Amayadream/Amayadream.jpg
-                        String path = request.getServletContext().getRealPath("/") + folder + "/" + userid;
+                        String path = request.getServletContext().getRealPath(separator) +separator+ folder + separator + userid;
                         File localFile = new File(path, fileName);
                         if(!localFile.exists()){
                             localFile.mkdirs();
                         }
                         try {
                             file.transferTo(localFile);
-                            file_url = folder + "/" + userid + "/" + fileName;
+                            file_url = folder + separator + userid + separator + fileName;
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

@@ -13,16 +13,23 @@ import org.apache.commons.dbcp.PoolingDriver;
 import org.apache.commons.pool.ObjectPool;
 import org.apache.commons.pool.impl.GenericObjectPool;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * @author :  Amayadream
  * @date :  2016.04.06 20:17
  */
+@PropertySource("classpath:jdbc.properties")
 public class PoolManager {
-    private static String driver = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://127.0.0.1:3306/webchat?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC";
-    private static String Name = "root";
-    private static String Password = "root";
+    @Value("${driver}")
+    private static String driver;
+    @Value("${url}")
+    private static String url;
+    @Value("${username}")
+    private static String Name;
+    @Value("${password}")
+    private static String Password;
 
     private static Class driverClass = null;
     private static ObjectPool connectionPool = null;

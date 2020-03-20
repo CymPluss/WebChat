@@ -1,6 +1,8 @@
+<%@ page import="java.io.File" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%String path = request.getContextPath();%>
+<%String separator = File.separator;%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +32,7 @@
       <input type="password" id="password" name="password" placeholder="请输入密码">
     </div>
     <div class="signin">
-      <input type="submit" id="submit" value="Login" >
+      <input type="submit" id="submit" value="登陆" >
     </div>
   </form>
 </div>
