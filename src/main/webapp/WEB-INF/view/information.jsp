@@ -29,7 +29,7 @@
                             ${user.nickname}
                         </div>
                         <div class="am-u-md-6" style="float: right">
-                            <img class="am-circle" src="${user.profilehead}" width="140" height="140" alt="${user.nickname}"/>
+                            <img class="am-circle" src="${user.userid}/head" width="200" height="200" alt="${user.nickname}"/>
                         </div>
 
                         <div class="am-u-md-3"><b>性别:</b></div>
@@ -56,9 +56,23 @@
                             </c:if>
                         </div>
                         <div class="am-u-md-3"><b>注册时间</b></div>
-                        <div class="am-u-md-3">${user.firsttime}</div>
+                        <div class="am-u-md-3">
+                            <c:if test="${user.firsttime == null || user.firsttime == ''}">
+                                啊列，没有留下记录呢。
+                            </c:if>
+                            <c:if test="${user.firsttime != null && user.firsttime != ''}">
+                                ${user.firsttime}
+                            </c:if>
+                        </div>
                         <div class="am-u-md-3"><b>最后登录</b></div>
-                        <div class="am-u-md-3">${user.lasttime}</div>
+                        <div class="am-u-md-3">
+                            <c:if test="${user.lasttime == null || user.lasttime == ''}">
+                                啊列，没有留下记录呢。
+                            </c:if>
+                            <c:if test="${user.lasttime != null && user.lasttime != ''}">
+                                ${user.lasttime}
+                            </c:if>
+                        </div>
                     </div>
                 </div>
             </div>

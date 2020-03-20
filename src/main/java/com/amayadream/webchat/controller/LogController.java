@@ -25,7 +25,7 @@ public class LogController {
 
     @RequestMapping(value = "{userid}/log")
     public ModelAndView selectAll(@PathVariable("userid") String userid, @RequestParam(defaultValue = "1") int page) {
-        int pageSize = 5;
+        int pageSize = 10;
         ModelAndView view = new ModelAndView("log");
         List<Log> list = logService.selectLogByUserid(userid, page, pageSize);
         int count = logService.selectCountByUserid(userid, pageSize);

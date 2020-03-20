@@ -20,7 +20,7 @@ import org.springframework.context.annotation.PropertySource;
  * @author :  Amayadream
  * @date :  2016.04.06 20:17
  */
-@PropertySource("classpath:jdbc.properties")
+@PropertySource("classpath:jdbcL.properties")
 public class PoolManager {
     @Value("${driver}")
     private static String driver;
@@ -43,7 +43,7 @@ public class PoolManager {
      */
     private static void loadProperties(){
         try {
-            InputStream stream = PoolManager.class.getClassLoader().getResourceAsStream("config/jdbc.properties");
+            InputStream stream = PoolManager.class.getClassLoader().getResourceAsStream("config/jdbcL.properties");
             Properties props = new Properties();
             props.load(stream);
             driver = props.getProperty("driver");

@@ -32,7 +32,6 @@ public class LogServiceImpl implements ILogService {
         int end = pageSize;
         if(page != 1) {
             start = pageSize * (page - 1);
-            end = pageSize * page;
         }
         return logDao.selectLogByUserid(userid, start, end);
     }
