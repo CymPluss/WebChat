@@ -237,7 +237,9 @@
         var html = "<li class=\"am-comment "+isSef+" am-comment-primary\"><a href=\"#link-to-user-home\"><img width=\"48\" height=\"48\" class=\"am-comment-avatar\" alt=\"\" src=\"${ctx}/"+message.from+"/head\"></a><div class=\"am-comment-main\">\n" +
                 "<header class=\"am-comment-hd\"><div class=\"am-comment-meta\">   <a class=\"am-comment-author\" href=\"#link-to-user\">"+message.from+"</a> 发表于<time> "+message.time+"</time> 发送给: "+to+" </div></header><div class=\"am-comment-bd\"> <p>"+message.content+"</p></div></div></li>";
         $("#chat").append(html);
-        $("#message").val("");  //清空输入区
+        if(isSef != ""){
+            $("#message").val("");  //清空输入区
+        }
         var chat = $("#chat-view");
         chat.scrollTop(chat[0].scrollHeight);   //让聊天区始终滚动到最下面
     }
