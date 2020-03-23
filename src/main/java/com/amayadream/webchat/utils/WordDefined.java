@@ -31,4 +31,6 @@ public class WordDefined {
     public String LOG_DETAIL_UPDATE_PROFILEHEAD = "更新用户头像";
     public String LOG_DETAIL_SYSCONFIG = "系统设置";
     public String LOG_DETAIL_UPDATE_PASSWORD = "更新密码";
+
+    public String Folder = "upload";
 }

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!-- sidebar start -->
+<%! int sizePage = 5;%>
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
@@ -14,7 +15,7 @@
                     <li><a href="${ctx}/system"><span class="am-icon-cog"></span> 系统设置</a></li>
                 </ul>
             </li>
-            <li><a href="${ctx}/${userid}/log"><span class="am-icon-inbox"></span> 系统日志<span class="am-badge am-badge-secondary am-margin-right am-fr"></span></a></li>
+            <li><a href="${ctx}/${userid}/log?size=<%=sizePage %>"><span class="am-icon-inbox"></span> 系统日志<span class="am-badge am-badge-secondary am-margin-right am-fr"></span></a></li>
             <li><a href="${ctx}/help"><span class="am-icon-globe"></span> 帮助</a></li>
             <li><a href="${ctx}/about"><span class="am-icon-leaf"></span> 关于</a></li>
             <li><a href="${ctx}/user/logout"><span class="am-icon-sign-out"></span> 注销</a></li>

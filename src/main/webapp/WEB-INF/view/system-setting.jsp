@@ -9,8 +9,8 @@
 <body>
 <jsp:include page="include/header.jsp"/>
 <div class="am-cf admin-main">
-    <jsp:include page="include/sidebar.jsp"/>
-
+    <%--<jsp:include page="include/sidebar.jsp"/>--%>
+    <%@ include file="include/sidebar.jsp"%>
     <!-- content start -->
     <div class="admin-content">
 
@@ -27,22 +27,22 @@
 
             <div class="am-tabs-bd">
                 <div class="am-tab-panel am-fade am-in am-active" id="tab1">
-                    <form class="am-form am-form-horizontal">
+                    <form class="am-form am-form-horizontal" action="${ctx}/${userid}/SysParams" enctype="multipart/form-data" method="get">
                         <div class="am-form-group">
                             <label class="am-u-sm-2 am-form-label">分页大小</label>
                             <div class="am-u-sm-10">
                                 <div class="am-btn-group" data-am-button>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 5
+                                        <input type="radio" name="sizePage" value="5"> 5
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 10
+                                        <input type="radio" name="sizePage" value="10"> 10
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 15
+                                        <input type="radio" name="sizePage" value="15"> 15
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 20
+                                        <input type="radio" name="sizePage" value="20"> 20
                                     </label>
                                 </div>
                             </div>
@@ -53,10 +53,10 @@
                             <div class="am-u-sm-10">
                                 <div class="am-btn-group" data-am-button>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 提示
+                                        <input type="radio" name="Notice" value="true"> 提示
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 不提示
+                                        <input type="radio" name="Notice" value="false"> 不提示
                                     </label>
                                 </div>
                             </div>
@@ -67,10 +67,10 @@
                             <div class="am-u-sm-10">
                                 <div class="am-btn-group" data-am-button>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 显示
+                                        <input type="radio" name="Online" value="true"> 显示
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 不显示
+                                        <input type="radio" name="Online" value="false"> 不显示
                                     </label>
                                 </div>
                             </div>
@@ -81,17 +81,17 @@
                             <div class="am-u-sm-10">
                                 <div class="am-btn-group" data-am-button>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 允许被查看
+                                        <input type="radio" name="Allow" value="true"> 允许被查看
                                     </label>
                                     <label class="am-btn am-btn-secondary am-btn-sm">
-                                        <input type="radio" name="options"> 不允许查看
+                                        <input type="radio" name="Allow" value="false"> 不允许查看
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="am-form-group">
                             <div class="am-u-sm-10 am-u-sm-offset-2">
-                                <button type="submit" class="am-btn am-round am-btn-success"><span class="am-icon-send"></span> 提交</button>
+                                <button TYPE="submit" class="am-btn am-round am-btn-success"><span class="am-icon-send"></span> 提交</button>
                             </div>
                         </div>
                     </form>
@@ -111,6 +111,7 @@
                         <button class="am-btn am-round am-btn-success"><span class="am-icon-upload"></span> 上传头像</button>
                         <script>
                             $(function() {
+
                                 $('#doc-form-file').on('change', function() {
                                     var fileNames = '';
                                     $.each(this.files, function() {
@@ -153,7 +154,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
 

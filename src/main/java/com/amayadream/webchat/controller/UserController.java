@@ -122,7 +122,7 @@ public class UserController {
     public String upload(@PathVariable("userid") String userid, MultipartFile file, HttpServletRequest request, UploadUtil uploadUtil,
                          RedirectAttributes attributes, NetUtil netUtil, LogUtil logUtil, CommonDate date, WordDefined defined){
         try{
-            String fileurl = uploadUtil.upload(request, "upload", userid);
+            String fileurl = uploadUtil.upload(request, defined.Folder, userid);
             user = userService.selectUserByUserid(userid);
             user.setProfilehead(fileurl);
             boolean flag = userService.update(user);
